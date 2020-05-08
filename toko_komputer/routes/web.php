@@ -26,3 +26,13 @@ Route::get('/barang/{barang}/edit', 'BarangController@edit')->name('barang.edit'
 Route::put('/barang/{barang}', 'BarangController@update')->name('barang.update');
 Route::delete('/barang/{barang}', 'BarangController@destroy')->name('barang.destroy');
 // Route::resource('barang', 'BarangController');
+
+/* route toko */
+Route::get('/toko', 'TokoController@index')->name('toko.index');
+Route::get('/toko/create', 'TokoController@create')->name('toko.create');
+Route::post('/toko', 'TokoController@store')->name('toko.store');
+Route::get('/toko/{toko}', 'TokoController@show')->name('toko.show');
+Route::get('/toko/{toko}/edit', 'TokoController@edit')->name('toko.edit');
+Route::put('/toko/{toko}', 'TokoController@update')->name('toko.update');
+Route::delete('/toko/{toko}', 'TokoController@destroy')->name('toko.destroy');
+// Route::resource('toko', 'TokoController');

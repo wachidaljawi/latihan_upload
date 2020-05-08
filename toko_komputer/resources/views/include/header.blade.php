@@ -8,18 +8,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/home" class="nav-link @yield('menuHome')">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/user" class="nav-link @yield('menuUser')">User</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/rt" class="nav-link @yield('menuRt')">RT</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/rw" class="nav-link @yield('menuRw')">RW</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/data_daerah" class="nav-link @yield('menuDataDaerah')">Data Daerah</a>
-      </li>
+
     </ul>
 
     <!-- SEARCH FORM -->
@@ -62,7 +51,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="{{asset ('AdminLTE/dist/img/user8-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -78,7 +67,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="{{asset ("AdminLTE/dist/img/user3-128x128.jpg") }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester

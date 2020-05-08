@@ -14,7 +14,8 @@ class TokoController extends Controller
      */
     public function index()
     {
-        //
+        $toko = toko::all();
+        return view('pages.toko.data-toko', ['toko' => $toko]);
     }
 
     /**

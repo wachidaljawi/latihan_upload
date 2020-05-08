@@ -22,11 +22,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  @include('includes.backend.header')
+  @include('include.header')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  @include('includes.backend.sidebar')
+  @include('include.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   @yield('content')
@@ -43,7 +43,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  @include('includes.backend.footer')
+  @include('include.footer')
 </div>
 <!-- ./wrapper -->
 
