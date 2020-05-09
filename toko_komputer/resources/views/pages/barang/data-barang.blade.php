@@ -34,23 +34,23 @@
                         <tbody>
                             @foreach($barang as $data)
                                 <tr>
-                                    <td><a href="/barang/{{ $data->barang_id }}">{{ $data->barang_id }}</a></td>
-                                    <td>{{ $data->no_invoice }}</td>
+                                    <td>{{ $data->barang_id }}</td>
+                                    <td><a href="/barang/{{ $data->barang_id }}">{{ $data->no_invoice }}</a></td>
                                     <td>{{ $data->nama_barang }}</td>
                                     <td>{{ $data->jenis_barang }}</td>
                                     <td>{{ $data->berat_barang }}</td>
                                     <td>{{ $data->warna_barang }}</td>
-                                    <td>{{ $data->gambar_barang}}</td>
+                                    <td><img width="150px" src="{{ url ('/gambar/'. $data->gambar_barang) }}"</td>
                                     <td>
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col">
                                                 <form action="{{ route ('barang.edit', $data->barang_id) }}" method="GET">
                                                     @csrf
                                                     @method('Patch')
-                                                    <button type="submit" class="btn btn-warning btn-sm mb-2">Edit</button>
+                                                    <button type="submit" class="btn btn-warning btn-sm btn-block mb-2">Edit</button>
                                                 </form>
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col">
                                                 <form action="{{ route ('barang.destroy', $data->barang_id) }}" method="post">
                                                     @csrf
                                                     @method('delete')

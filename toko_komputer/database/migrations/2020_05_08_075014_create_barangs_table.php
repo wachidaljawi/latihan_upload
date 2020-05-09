@@ -18,7 +18,7 @@ class CreateBarangsTable extends Migration
             $table->string('no_invoice');
             $table->string('nama_barang');
             $table->string('jenis_barang', 50);
-            $table->integer('berat_barang');
+            $table->string('berat_barang');
             $table->string('warna_barang', 50);
             $table->string('gambar_barang');
             $table->timestamps();
