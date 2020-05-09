@@ -44,9 +44,9 @@
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <form action="{{ route ('barang.edit', $data->barang_id) }}" method="GET">
+                                                <form action="{{ route ('barang.edit', $data->barang_id) }}" method="get">
                                                     @csrf
-                                                    @method('Patch')
+                                                    @method('Put')
                                                     <button type="submit" class="btn btn-warning btn-sm btn-block mb-2">Edit</button>
                                                 </form>
                                             </div>

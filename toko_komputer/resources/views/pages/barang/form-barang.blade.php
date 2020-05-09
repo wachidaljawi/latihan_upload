@@ -13,15 +13,6 @@
                     <form action="/barang" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            {{-- <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="barang_id">Id Barang</label>
-                                    <input type="text" class="form-control" id="barang_id"  placeholder="Masukan Id Barang" name="barang_id" value="{{ old('barang_id') }}">
-                                    @error('barang_id')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div> --}}
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="no_invoice">No Invoice</label>
@@ -31,7 +22,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                 <div class="form-group">
                                     <label for="nama_barang">Nama Barang</label>
                                     <input type="text" class="form-control" id="nama_barang"  placeholder="nama Barang" name="nama_barang" value="{{ old('nama_barang') }}">

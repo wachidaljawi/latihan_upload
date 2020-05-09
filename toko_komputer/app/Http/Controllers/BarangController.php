@@ -97,13 +97,33 @@ class BarangController extends Controller
     public function update(Request $request, barang $barang)
     {
         $validatedData = $request->validate([
-            'barang' => 'required',
+            'nama_barang' => 'required|min:3',
+            'jenis_barang' => 'required',
+            'berat_barang' => 'required',
+            'warna_barang' => 'required',
+            'gambar_barang' => 'required|file|image|max:1000',
+
         ]);
-        $barang = barang::find($barang);
-        $barang->barang = $request->barang;
-        $barang->save();
-        $request->session()->flash('pesan', "Data {$validatedData['barang']} berhasil diupdate");
-        return redirect('/barang');
+
+        $file = $request->file('gambar_barang');
+        $foto_barang = time() . "_" . $file->getClientOriginalName();
+
+        // untuk menentukan tujuan folder setelah gambar diupload
+        $tujuan_upload = 'gambar';
+        $file->move($tujuan_upload, $foto_barang);
+
+        barang::where('barang_id', $barang->barang_id)
+            ->update([
+
+                'nama_barang' => $request->nama_barang,
+                'jenis_barang' => $request->jenis_barang,
+                'berat_barang' => $request->berat_barang,
+                'warna_barang' => $request->warna_barang,
+                'gambar_barang' => $foto_barang
+
+            ]);
+        // $barang->update($validatedData);
+        return redirect('/barang')->with('status', "Data berhasil diupdate");
     }
 
     /**
@@ -114,7 +134,7 @@ class BarangController extends Controller
      */
     public function destroy(barang $barang)
     {
-        barang::destroy($barang->id_barang);
-        return redirect('/barang')->with('status', 'Data Karyawan Berhasil Di Hapus');
+        barang::destroy($barang->barang_id);
+        return redirect('/barang')->with('status', 'Data barang Berhasil Di Hapus');
     }
 }

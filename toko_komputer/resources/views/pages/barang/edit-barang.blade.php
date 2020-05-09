@@ -2,3 +2,101 @@
 @section ('title','Edit Barang')
 @section ('editBarang','active')
 @section ('content')
+
+<div class="content-wrapper">
+        <div class="content">
+            <div class="container bg-white">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center">Form Edit Barang</h1>
+                        <hr>
+                    <form action="/barang/{{$barang->barang_id}}" method="POST" enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="no_invoice">No Invoice</label>
+                                        <input type="text" class="form-control" id="no_invoice"  placeholder="Masukan no invoice" name="no_invoice"  readonly value="{{ $barang->no_invoice }}">
+                                        @error('no_invoice')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label for="nama_barang">Nama Barang</label>
+                                        <input type="text" class="form-control" id="nama_barang"  placeholder="nama Barang" name="nama_barang" value="{{ $barang->nama_barang }}">
+                                        @error('nama_barang')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror                
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="jenis_barang">Jenis Barang</label>
+                                        <select name="jenis_barang" id="jenis_barang" class="form-control">
+                                            <option value="Monitor" {{ $barang->jenis_barang == 'Monitor' ? 'selected' : '' }}>
+                                                Monitor
+                                            </option>
+                                            <option value="Hard Disk" {{ $barang->jenis_barang == 'Hard Disk' ? 'selected' : '' }}>
+                                                Hard Disk
+                                            </option>
+                                            <option value="Ssd" {{ $barang->jenis_barang == 'Ssd' ? 'selected' : '' }}>
+                                                Ssd
+                                            </option>
+                                            <option value="Laptop" {{ $barang->jenis_barang == 'Laptop' ? 'selected' : '' }}>
+                                                Laptop
+                                            </option>
+                                            <option value="Mouse" {{ $barang->jenis_barang == 'Mouse' ? 'selected' : '' }}>
+                                                Mouse
+                                            </option>
+                                            <option value="Ram" {{ $barang->jenis_barang == 'Ram' ? 'selected' : '' }}>
+                                                Ram
+                                            </option>
+                                        </select>
+                                        @error('jenis_barang')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="berat_barang">Berat Barang</label>
+                                        <input type="text" class="form-control" id="berat_barang"  placeholder="Berat barang" name="berat_barang" value="{{ $barang->berat_barang }}">
+                                        @error('berat_barang')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="warna_barang">Warna</label>
+                                        <input type="text" class="form-control" id="warna_barang"   placeholder="Masukan warna " name="warna_barang" value="{{ $barang->warna_barang }}">
+                                        @error('warna_barang')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <form action="{{url('/barang')}}" method="POST" enctype="multipart/form-data">
+                                @csrf --}}
+                                <div class="form-group">
+                                    <label for="gambar_barang">Gambar Barang</label>
+                                    <input type="file" class="form-control-file" id="gambar_barang" name="gambar_barang">
+                                    @error('gambar_barang')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            {{-- </form> --}}
+                            <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                            <a href="/barang" class="btn btn-outline-warning btn-sm">Kembali</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endsection

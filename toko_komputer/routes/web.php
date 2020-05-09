@@ -23,7 +23,7 @@ Route::get('/barang/create', 'BarangController@create')->name('barang.create');
 Route::post('/barang', 'BarangController@store')->name('barang.store');
 Route::get('/barang/{barang}', 'BarangController@show')->name('barang.show');
 Route::get('/barang/{barang}/edit', 'BarangController@edit')->name('barang.edit');
-Route::put('/barang/{barang}', 'BarangController@update')->name('barang.update');
+Route::put('/barang/{barang}', 'BarangController@update')->name('barangs.update');
 Route::delete('/barang/{barang}', 'BarangController@destroy')->name('barang.destroy');
 // Route::resource('barang', 'BarangController');
 
