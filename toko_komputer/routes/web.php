@@ -28,11 +28,11 @@ Route::get('/', function () {
 Route::resource('barang', 'BarangController');
 
 /* route toko */
-Route::get('/toko', 'TokoController@index')->name('toko.index');
-Route::get('/toko/create', 'TokoController@create')->name('toko.create');
-Route::post('/toko', 'TokoController@store')->name('toko.store');
-Route::get('/toko/{toko}', 'TokoController@show')->name('toko.show');
-Route::get('/toko/{toko}/edit', 'TokoController@edit')->name('toko.edit');
-Route::patch('/toko/{toko}', 'TokoController@update')->name('toko.update');
-Route::delete('/toko/{toko}', 'TokoController@destroy')->name('toko.destroy');
-// Route::resource('toko', 'TokoController');
+// Route::get('/toko', 'TokoController@index')->name('toko.index');
+// Route::get('/toko/create', 'TokoController@create')->name('toko.create');
+// Route::post('/toko', 'TokoController@store')->name('toko.store');
+// Route::get('/toko/{toko}', 'TokoController@show')->name('toko.show');
+// Route::get('/toko/{toko}/edit', 'TokoController@edit')->name('toko.edit');
+// Route::patch('/toko/{toko}', 'TokoController@update')->name('toko.update');
+// Route::delete('/toko/{toko}', 'TokoController@destroy')->name('toko.destroy');
+Route::resource('toko', 'TokoController');

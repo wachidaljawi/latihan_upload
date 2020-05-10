@@ -7,7 +7,7 @@
             <div class="container bg-white">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>TABEL Toko</h3>
+                        <h1 class="text-center">Tabel Toko</h1>
                         <a href="/toko/create" class="btn btn-info my-3">Tambah Data Toko</a>
             
                         @if (session('status'))

@@ -8,7 +8,7 @@
             <div class="container bg-white">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="text-center">FORM Toko</h1>
+                        <h1 class="text-center">Form Toko</h1>
                         <hr>
                     <form action="/toko/{{$toko->id}}" method="post">
                         @csrf
