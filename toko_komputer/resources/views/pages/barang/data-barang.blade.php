@@ -40,7 +40,7 @@
                                     <td>{{ $data->jenis_barang }}</td>
                                     <td>{{ $data->berat_barang }}</td>
                                     <td>{{ $data->warna_barang }}</td>
-                                    <td><img width="150px" src="{{ url ('/gambar/'. $data->gambar_barang) }}"</td>
+                                    <td><img width="100px" src="{{ url ('/gambar/'. $data->gambar_barang) }}"</td>
                                     <td>
                                         <div class="row">
                                             <div class="col">
