@@ -25,7 +25,7 @@ class TokoController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.toko.form-toko');
     }
 
     /**
@@ -36,7 +36,15 @@ class TokoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_toko' => 'required|min:3',
+            'pemilik_toko' => 'required|min:3',
+            'no_izin_usaha' => 'required|size:6|unique:tokos',
+            'alamat_toko' => 'required',
+
+        ]);
+        toko::create($validatedData);
+        return redirect('/toko')->with('status', "Data {$validatedData['no_izin_usaha']} berhasil ditambahkan");
     }
 
     /**
@@ -47,7 +55,7 @@ class TokoController extends Controller
      */
     public function show(toko $toko)
     {
-        //
+        return view('pages.toko.show-toko', ['toko' => $toko]);
     }
 
     /**
@@ -58,7 +66,7 @@ class TokoController extends Controller
      */
     public function edit(toko $toko)
     {
-        //
+        return view('pages.toko.edit-toko', ['toko' => $toko]);
     }
 
     /**
@@ -70,7 +78,15 @@ class TokoController extends Controller
      */
     public function update(Request $request, toko $toko)
     {
-        //
+        toko::where('id', $toko->id)
+            ->update([
+
+                'nama_toko' => $request->nama_toko,
+                'pemilik_toko' => $request->pemilik_toko,
+                'alamat_toko' => $request->alamat_toko,
+
+            ]);
+        return redirect('/toko')->with('status', "Data toko berhasil diupdate");
     }
 
     /**
@@ -81,6 +97,7 @@ class TokoController extends Controller
      */
     public function destroy(toko $toko)
     {
-        //
+        toko::destroy($toko->id);
+        return redirect('/toko')->with('status', 'Data Toko Berhasil Di Hapus');
     }
 }

@@ -33,6 +33,6 @@ Route::get('/toko/create', 'TokoController@create')->name('toko.create');
 Route::post('/toko', 'TokoController@store')->name('toko.store');
 Route::get('/toko/{toko}', 'TokoController@show')->name('toko.show');
 Route::get('/toko/{toko}/edit', 'TokoController@edit')->name('toko.edit');
-Route::put('/toko/{toko}', 'TokoController@update')->name('toko.update');
+Route::patch('/toko/{toko}', 'TokoController@update')->name('toko.update');
 Route::delete('/toko/{toko}', 'TokoController@destroy')->name('toko.destroy');
 // Route::resource('toko', 'TokoController');
